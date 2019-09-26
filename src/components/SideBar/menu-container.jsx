@@ -42,12 +42,12 @@ export default class MenuContainer extends Component {
 
     render() { 
         const menu = this.state.menu
-        const hasCloseIcon = this.props.closeIcon
+        const { width, left, closeIcon, hideOrShow } = this.props
         
         return (
-            <div className="menu-container" style={{ width: this.props.width }}>
+            <div className="menu-container" style={{ width: width, left: left }}>
                 { 
-                    hasCloseIcon ? <i className="material-icons close-icon" onClick={ this.props.hideOrShow }> close </i> : null 
+                    closeIcon ? <i className="material-icons close-icon" onClick={ hideOrShow }> close </i> : null 
                 }
                 <ul className="top">
                     {
@@ -64,7 +64,7 @@ export default class MenuContainer extends Component {
                 </ul>
                 <div className="menu-scroll">
                     <ul className="library"> 
-                        <li> Your Library </li>
+                        <li className="label"> Your Library </li>
                         {
                             menu["library"]["links"].map((link, index) => 
                                 <MenuItem 
@@ -78,7 +78,7 @@ export default class MenuContainer extends Component {
                         }
                     </ul>
                     <ul className="library"> 
-                        <li> Your Library </li>
+                        <li className="label"> Playlists </li>
                         {
                             menu["library"]["links"].map((link, index) => 
                                 <MenuItem 

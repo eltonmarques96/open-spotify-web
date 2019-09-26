@@ -1,5 +1,6 @@
 .menu-icon { 
     font-size: 36px;
+    cursor: pointer;
 }
 
 .close-icon { 
@@ -7,15 +8,17 @@
     position: absolute;
     right: 20px;
     top: 20px;
+    cursor: pointer;
 }
 
 .menu-container { 
     position: absolute;
     top: 0;
-    left: 0;
     background-color: $menu-sidebar-color;
     height: 100vh;
     padding: 20px 0 20px;
+    font-family: 'Manjari', sans-serif;
+    transition: left .6s;
 }
 
 .menu-scroll { 
@@ -54,6 +57,11 @@
         background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSAxNS40MUwxMiAxMC44M2w0LjU5IDQuNThMMTggMTRsLTYtNi02IDZ6IiBmaWxsPSJyZ2IoODksODksODkpIi8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==");
         background-size: 20px;  
     }
+
+    .label { 
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
 }
 
 .top { 
@@ -61,27 +69,36 @@
         span { 
             margin-left: 20px;
         }
+
+        & + li { 
+            margin-top: 15px;
+        }
     }
 
-    li + li { 
-        margin-top: 15px;
-    }
 }
 
 .library { 
-    li:first-child { 
-        cursor: default;
-        margin-bottom: 10px;
-    }
-
-    li:not(:first-child) { 
-        font-weight: bold;
-        margin-bottom: 15px;
+    li { 
+        &:first-child { 
+            cursor: default;
+            margin-bottom: 10px;
+        }
+    
+        &:not(:first-child) { 
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
     }
 }
 
 .activeItem { 
+    color: white;
+    font-weight: bold;
     border-left: 5px solid $active;
+
+    i { 
+        fill: white;
+    }
 }
 
 .menuIcon { 
@@ -94,9 +111,23 @@
     padding: 0 20px;
     height: 8%;
     margin-top: 5px;
+    cursor: pointer;
 
     span { 
         margin-left: 10px;
+    }
+
+    &:hover { 
+        font-weight: bold;
+        color: white;
+        
+        span { 
+            text-shadow: 0 0 5px white;
+        }
+
+        i { 
+            fill: white;
+        }
     }
 }
 
