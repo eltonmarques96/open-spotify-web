@@ -14,21 +14,14 @@ html body {
 ul { 
     list-style: none;
     padding: 0;
+    margin-bottom: 25px;
 
     li { 
         display: flex;
         align-items: center;
         padding-left: 20px;
         border-left: 5px solid rgb(18.1, 18.1, 18.1);
-
-        span { 
-            margin-top: 5px; 
-            margin-left: 20px;
-        }
-    }
-
-    li + li { 
-        margin-top: 30px;
+        cursor: pointer;
     }
 }
 

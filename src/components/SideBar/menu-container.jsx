@@ -1,61 +1,102 @@
 import React, { Component } from 'react'
 import MenuItem from './menu-item.jsx'
 
-const menu = { 
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    backgroundColor: "rgb(18.1, 18.1, 18.1)",
-    height: "100vh",
-    padding: "50px 0 20px"
-}
-
-const closeIcon = { 
-    fontSize: '24px',
-    position: "absolute",
-    right: "20px",
-    top: "20px"
-}
-
 export default class MenuContainer extends Component { 
     constructor(props) { 
         super(props)
     }
 
     state = { 
-        currentItem: 0,
-        menuItems: [ 
-            true, false, false
-        ]
+        menu: {
+            selected: "top", // Default option
+            top: {
+                activeLink: 0,
+                links: [ 
+                    { name: "Home", icon: "home" },
+                    { name: "Browse", icon: "search" },
+                    { name: "Radio", icon: "adjust" }
+                ]
+            },
+            library: { 
+                activeLink: 0,
+                links: [ 
+                    { name: "Made for You", icon: null },
+                    { name: "Recently Played", icon: null },
+                    { name: "Liked Songs", icon: null },
+                    { name: "Albums", icon: null },
+                    { name: "Artists", icon: null },
+                    { name: "Podcasts", icon: null }
+                ]
+            }
+        }
     }
 
-    activeItem = (position) => {          
-        const prevState = this.state.menuItems
+    activeItem = (index, section) => {          
+        const menu = this.state.menu
 
-        prevState[this.state.currentItem] = !prevState[this.state.currentItem]
-        prevState[position] = !prevState[position]
+        menu.selected = section
+        menu[section].activeLink = index
 
-        this.setState({
-            menuItems: [...prevState],
-            currentItem: position
-        })
+        this.setState({ menu })
     }
 
     render() { 
-        const menuItems = this.state.menuItems
+        const menu = this.state.menu
         const hasCloseIcon = this.props.closeIcon
-        const width = { ...menu, width: this.props.width }
         
         return (
-            <div style={ width }>
+            <div className="menu-container" style={{ width: this.props.width }}>
                 { 
-                    hasCloseIcon ? <i className="material-icons" style={ closeIcon } onClick={ this.props.hideOrShow }> close </i> : null 
+                    hasCloseIcon ? <i className="material-icons close-icon" onClick={ this.props.hideOrShow }> close </i> : null 
                 }
-                <ul>
-                    <MenuItem activate={ () => this.activeItem(0) } isActive={ menuItems[0] } name="Home" icon="home" />
-                    <MenuItem activate={ () => this.activeItem(1) } isActive={ menuItems[1] } name="Browse" icon="search" />
-                    <MenuItem activate={ () => this.activeItem(2) } isActive={ menuItems[2] } name="Radio" icon="adjust" />
+                <ul className="top">
+                    {
+                        menu["top"]["links"].map((link, index) => 
+                            <MenuItem 
+                                key={ index }
+                                activate={ () => this.activeItem(index, "top") } 
+                                isActive={ menu["selected"] == "top" ? index == menu["top"]["activeLink"] : false }
+                                name={ link.name } 
+                                icon={ link.icon } 
+                            />
+                        )
+                    }
                 </ul>
+                <div className="menu-scroll">
+                    <ul className="library"> 
+                        <li> Your Library </li>
+                        {
+                            menu["library"]["links"].map((link, index) => 
+                                <MenuItem 
+                                    key={ index }
+                                    activate={ () => this.activeItem(index, "library") } 
+                                    isActive={ menu["selected"] == "library" ? index == menu["library"]["activeLink"] : false }
+                                    name={ link.name } 
+                                    icon={ link.icon } 
+                                />
+                            )
+                        }
+                    </ul>
+                    <ul className="library"> 
+                        <li> Your Library </li>
+                        {
+                            menu["library"]["links"].map((link, index) => 
+                                <MenuItem 
+                                    key={ index }
+                                    activate={ () => this.activeItem(index, "library") } 
+                                    isActive={ menu["selected"] == "library" ? index == menu["library"]["activeLink"] : false }
+                                    name={ link.name } 
+                                    icon={ link.icon } 
+                                />
+                            )
+                        }
+                    </ul>
+                </div>
+                <hr/>
+                <div className="newPlaylist"> 
+                        <i className="material-icons menuIcon"> add_circle_outline </i>
+                        <span> New Playlist </span>
+                </div>
             </div> 
         )
     }

@@ -1,0 +1,110 @@
+.menu-icon { 
+    font-size: 36px;
+}
+
+.close-icon { 
+    font-size: 24px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.menu-container { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $menu-sidebar-color;
+    height: 100vh;
+    padding: 20px 0 20px;
+}
+
+.menu-scroll { 
+    overflow-y: scroll;
+    max-height: 60%;
+    width: 100%;
+    
+    &::-webkit-scrollbar { 
+        width: 16px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbar-color;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $text-color;
+    }
+
+    &::-webkit-scrollbar-button { 
+        background-color: $menu-sidebar-color;
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 16px;
+        width: 1em;
+    }
+
+    &::-webkit-scrollbar-button:end:increment {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSA4LjU5TDEyIDEzLjE3bDQuNTktNC41OEwxOCAxMGwtNiA2LTYtNiAxLjQxLTEuNDF6IiBmaWxsPSJyZ2IoODksIDg5LCA4OSkiLz48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiLz48L3N2Zz4=");
+        background-size: 20px;  
+    }
+    
+    
+    &::-webkit-scrollbar-button:start:decrement {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNy40MSAxNS40MUwxMiAxMC44M2w0LjU5IDQuNThMMTggMTRsLTYtNi02IDZ6IiBmaWxsPSJyZ2IoODksODksODkpIi8+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==");
+        background-size: 20px;  
+    }
+}
+
+.top { 
+    li { 
+        span { 
+            margin-left: 20px;
+        }
+    }
+
+    li + li { 
+        margin-top: 15px;
+    }
+}
+
+.library { 
+    li:first-child { 
+        cursor: default;
+        margin-bottom: 10px;
+    }
+
+    li:not(:first-child) { 
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+}
+
+.activeItem { 
+    border-left: 5px solid $active;
+}
+
+.menuIcon { 
+    font-size: 30px;
+}
+
+.newPlaylist { 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 8%;
+    margin-top: 5px;
+
+    span { 
+        margin-left: 10px;
+    }
+}
+
+hr { 
+    border: none;
+    height: 1px;
+    margin: 0;
+    color: $scrollbar-color;
+    background-color: $scrollbar-color; 
+    opacity: .2;
+}
