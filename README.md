@@ -22,14 +22,6 @@ yarn start
  - <a href="https://webpack.js.org/"> webpack </a>
  - <a href="https://github.com/contra/react-responsive"> react-responsive </a>
  
- <div align="center">
-  <h3>
-    <a href="https://brnaka.github.io/open-spotify-web/" target="_blank">
-      Demo
-    </a>
-  </h3>
-</div>
-
 ## How to contribute
  - Check if there are issues with the light green "Task" label.
  - Check if it's not assigned to anyone. 
@@ -37,6 +29,14 @@ yarn start
  - Fork the project
  - Create a branch following the name pattern: "Task_<issue-id>" (e.g "Task_#1")
  - When the task is done, you can open a "Pull Request"
+
+ <div align="center">
+  <h3>
+    <a href="https://brnaka.github.io/open-spotify-web/" target="_blank">
+      Demo
+    </a>
+  </h3>
+</div>
 
 <br />
 
