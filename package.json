@@ -4,9 +4,12 @@
   "main": "index.js",
   "author": "Bruno Nakayabu <bruno.nakayabu@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/BrNaka/open-spotify-web.git",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -27,6 +30,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react-responsive": "^8.0.1"
   }
 }
