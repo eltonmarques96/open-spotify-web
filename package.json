@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Bruno Nakayabu <bruno.nakayabu@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/BrNaka/open-spotify-web.git",
+  "homepage": "https://brnaka.github.io/open-spotify-web/",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
