@@ -30,6 +30,13 @@ yarn start
   </h3>
 </div>
 
+## How to contribute
+ - Check if there are issues with the light green "Task" label.
+ - Check if it's not assigned to anyone. 
+ - Assign the task to you or contact me to do it.
+ - Fork the project
+ - Create a branch following the name pattern: "Task_<issue-id>" (e.g "Task_#1")
+ - When the task is done, you can open a "Pull Request"
 
 <br />
 
