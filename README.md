@@ -24,7 +24,7 @@ yarn start
  
  <div align="center">
   <h3>
-    <a href="https://brnaka.github.io/open-spotify-web/">
+    <a href="https://brnaka.github.io/open-spotify-web/" target="_blank">
       Demo
     </a>
   </h3>
