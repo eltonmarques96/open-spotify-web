@@ -77,7 +77,7 @@ export default class MenuContainer extends Component {
                             )
                         }
                     </ul>
-                    <ul className="library"> 
+                    <ul className="library" style={{ marginTop: "20px" }}> 
                         <li className="label"> Playlists </li>
                         {
                             menu["library"]["links"].map((link, index) => 
@@ -93,9 +93,11 @@ export default class MenuContainer extends Component {
                     </ul>
                 </div>
                 <hr/>
-                <div className="newPlaylist"> 
+                <div className="newPlaylist">
+                    <div>
                         <i className="material-icons menuIcon"> add_circle_outline </i>
                         <span> New Playlist </span>
+                    </div> 
                 </div>
             </div> 
         )

@@ -1,0 +1,105 @@
+.player-container { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 14%;
+    width: 100%;
+    background-color: $player-color;
+    padding: 20px;
+
+    .music-info-container { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 13%;
+
+        img { 
+            height: 100%;
+            width: 70px;
+        }
+
+        .music {
+            overflow-x: hidden;
+            max-width: 70%;
+            white-space: nowrap;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 0 10px;
+            font-size: 0.8em;
+
+            .title { 
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .player-option-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+
+        .bar {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+
+            i { 
+                margin: 10px !important;
+            }
+
+            div { 
+                width: 70px;
+                height: 5px;
+                border-radius: 5px;
+                background-color: $scrollbar-color;
+            }
+        }
+
+        i:not(:last-child) { 
+            font-size: 1.1em;
+            margin-right: 10px;
+        }
+    }
+
+    .player-controllers-container { 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .controllers { 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 25%;
+
+            .play-icon {
+                font-size: 2.5em;
+            }
+        }
+
+        .timeline { 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 80%;
+
+            .bar { 
+                width: 85%;
+                height: 5px;
+                border-radius: 5px;
+                background-color: $scrollbar-color;
+            }
+
+            span { 
+                font-size: .8em;
+            }
+        }
+    }
+}

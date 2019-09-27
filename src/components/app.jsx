@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 import SideBarMenu from './SideBar/sidebar-menu.jsx'
+import PlayerContainer from './Player/player-container.jsx'
 
 export default class App extends Component { 
     render() { 
         return (
-            <SideBarMenu/>
+            <div> 
+                <SideBarMenu/>
+                <PlayerContainer />
+            </div>
         )
     }
 }
